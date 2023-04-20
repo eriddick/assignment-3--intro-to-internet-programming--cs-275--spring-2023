@@ -176,10 +176,7 @@ exports.default = series(
     compileCSSForDev,
     lintJS,
     transpileJSForDev,
-    compressHTML,
-    compileCSSForProd,
-    transpileJSForProd,
-    copyUnprocessedAssetsForProd
+    serve
 );
 exports.serve = series(
     validateHTML,
