@@ -4,9 +4,10 @@ body {
 }
 
 header {
-  padding-left: 20px;
+  position: relative;
+  top: -10px;
   height: 75px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   background-color: aqua;
 }
 
@@ -28,7 +29,6 @@ header {
   position: relative;
   overflow: hidden;
   display: flex;
-  text-align: center;
   width: 200px;
   top: -200px;
   left: 500px;
@@ -36,23 +36,23 @@ header {
 }
 
 .menu1 {
-  position: relative;
+  position: inherit;
   top: 30px;
 }
 
 .menu2 {
-  position: relative;
+  position: inherit;
   left: 20px;
   top: 30px;
 }
 
 .subMenu1 {
-  position: relative;
+  position: inherit;
   top: -125px;
 }
 
 .subMenu2 {
-  position: relative;
+  position: inherit;
   top: -125px;
 }
 
