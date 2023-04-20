@@ -6,18 +6,20 @@ let showMenu = document.getElementById(`show-menu`);
 let showModal = document.getElementById(`show-modal`);
 let modalPanel = document.getElementById(`modal-panel`);
 
+let clickCounter = 0;
 
 showMenu.addEventListener(`click`, () => {
-    const menuCounter = menu.style.zIndex;
-    if (menuCounter == 0) {
+    if (clickCounter == 0 | clickCounter == 1) {
         console.log(`Menu Opened`);
-        menu.style.top = 30 + `px`;
+        menu.style.top = 25 + `px`;
         menu.style.zIndex++;
+        clickCounter++;
     }
-    if (menu.style.zIndex == 2) {
+    if (clickCounter == 2) {
         console.log(`Menu Closed`);
-        menu.style.top = -30 + `px`;
+        menu.style.top = -200 + `px`;
         menu.style.zIndex = 0;
+        clickCounter = 0;
     }
 });
 
