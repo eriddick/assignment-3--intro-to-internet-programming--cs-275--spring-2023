@@ -9,7 +9,8 @@ let modalPanel = document.getElementById(`modal-panel`);
 let clickCounter = 0;
 
 showMenu.addEventListener(`click`, () => {
-    if (clickCounter == 0 | clickCounter == 1) {
+    menu.style.left = -100 + `px`;
+    if (clickCounter == 0| clickCounter == 1) {
         console.log(`Menu Opened`);
         menu.style.top = 50 + `px`;
         menu.style.zIndex++;
@@ -21,32 +22,49 @@ showMenu.addEventListener(`click`, () => {
         menu.style.zIndex = 0;
         clickCounter = 0;
     }
+    if (clickCounter == 3 | clickCounter == 4) {
+        console.log(`Side tray opened`);
+        menu.style.left = -250 + `px`;
+        menu.style.zIndex++;
+        clickCounter++;
+    }
+    if (clickCounter == 5) {
+        console.log(`Side tray closed`);
+        menu.style.left = -500 + `px`;
+        menu.style.zIndex = 0;
+        clickCounter = 3;
+    }
 });
 
-if (visualViewport.width <= 736 + `px`) {
-    menu.style.top = 50 + `px`;
-    menu.style.left = visualViewport.width - 100 + `px`;
-    showMenu.addEventListener(`click`, () => {
-        if (clickCounter == 0 | clickCounter == 1) {
-            console.log(`Menu Opened`);
-            menu.style.left = visualViewport.width + 800 + `px`;
-            menu.style.zIndex++;
-            clickCounter++;
-        }
-        if (clickCounter == 2) {
-            console.log(`Menu Closed`);
-            menu.style.left = visualViewport.width - 100 + `px`;
-            menu.style.zIndex = 0;
-            clickCounter = 0;
-        }
-    });
-}
+window.onload = () => {
+    if (window.innerWidth <= 736) {
+        menu.style.top = 50 + `px`;
+        menu.style.left = -500 + `px`;
+        clickCounter = 3;
+    }
+    else {
+        clickCounter = 0;
+        menu.style.left = -100 + `px`;
+    }
+};
+
+window.onresize = () => {
+    if (window.innerWidth <= 736) {
+        menu.style.top = 50 + `px`;
+        menu.style.left = -500 + `px`;
+        clickCounter = 3;
+    }
+    else {
+        clickCounter = 0;
+        menu.style.left = -100 + `px`;
+    }
+};
 
 showModal.addEventListener(`click`, () => {
     console.log(`Modal Open`);
     body.style.backgroundColor = `rgba(0,0,0,0.5)`;
-    header.style.backgroundColor = `rgba(0,225,225,0.5)`;
-    modalPanel.style.top = 25 + `px`;
+    header.style.backgroundColor = `rgba(0,0,0,0.5)`;
+    modalPanel.style.marginTop = 20 + `px`;
     modalPanel.style.zIndex = 2;
 });
 
@@ -54,8 +72,8 @@ main.addEventListener(`click`, () => {
     if (modalPanel.style.zIndex == 2) {
         console.log(`Modal Closed`);
         body.style.backgroundColor = `rgba(0,0,0,0)`;
-        header.style.backgroundColor = `rgba(0,225,225,0)`;
-        modalPanel.style.top = -700 + `px`;
+        header.style.backgroundColor = `rgba(0,0,0,0)`;
+        modalPanel.style.marginTop = -700 + `px`;
         modalPanel.style.zIndex = 0;
     }
 });
@@ -65,9 +83,8 @@ document.addEventListener(`keydown`, (e) => {
         if (modalPanel.style.zIndex == 2) {
             console.log(`Modal Closed`);
             body.style.backgroundColor = `rgba(0,0,0,0)`;
-            header.style.backgroundColor = `rgba(0,225,225,0)`;
-            header.backgroundColor = `rgb(0, 225, 225)`;
-            modalPanel.style.top = -700 + `px`;
+            header.style.backgroundColor = `rgba(0,0,0,0)`;
+            modalPanel.style.marginTop = -700 + `px`;
             modalPanel.style.zIndex = 0;
         }
     }

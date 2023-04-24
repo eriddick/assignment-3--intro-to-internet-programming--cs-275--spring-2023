@@ -1,8 +1,3 @@
-body {
-  overflow-x: hidden;
-  transition-delay: 500ms;
-}
-
 header {
   position: relative;
   display: flex;
@@ -13,32 +8,13 @@ header {
   /* background-color: aqua; */
 }
 
-main {
-  position: relative;
-  /* top: -100px; */
-}
-
 #js-triggers {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-#show-modal {
-  width: 100px;
   position: inherit;
-  top: 20px;
-  left: 600px;
-}
-
-#show-menu {
-  padding-right: 20px;
-  position: inherit;
-  top: 20px;
-  left: 600px;
+  justify-content: right;
 }
 
 .menu {
+  transition-delay: 500ms;
   position: relative;
   overflow: hidden;
   top: -200px;
@@ -72,12 +48,15 @@ main {
 }
 
 .modal-panel {
+  transition-delay: 500ms;
   position: fixed;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   right: 350px;
-  top: -700px;
-  height: 700px;
-  width: 700px;
+  top: -700px; */
+  margin-top: -700px;
+  margin-left: -150px;
+  height: 600px;
+  width: 500px;
   background-color: orange;
 }
