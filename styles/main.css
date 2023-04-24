@@ -5,45 +5,60 @@ body {
 
 header {
   position: relative;
-  top: -10px;
+  display: flex;
+  justify-content: center;
+  /* top: -100px; */
   height: 75px;
   margin-bottom: 50px;
-  background-color: aqua;
+  /* background-color: aqua; */
+}
+
+main {
+  position: relative;
+  /* top: -100px; */
+}
+
+#js-triggers {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 #show-modal {
   width: 100px;
-  position: relative;
-  left: 1150px;
-  top: 10px;
+  position: inherit;
+  top: 20px;
+  left: 600px;
 }
 
 #show-menu {
   padding-right: 20px;
-  position: relative;
-  left: 1150px;
-  top: 10px;
+  position: inherit;
+  top: 20px;
+  left: 600px;
 }
 
 .menu {
   position: relative;
   overflow: hidden;
-  display: flex;
-  width: 200px;
   top: -200px;
-  left: 500px;
+  left: -100px;
+  height: 50px;
+  width: 150px;
+  /* left: -500px; */
   background-color: aqua;
 }
 
 .menu1 {
   position: inherit;
-  top: 30px;
+  top: 25px;
+  right: 20px;
 }
 
 .menu2 {
   position: inherit;
-  left: 20px;
-  top: 30px;
+  left: 50px;
+  top: -50px;
 }
 
 .subMenu1 {
@@ -58,6 +73,8 @@ header {
 
 .modal-panel {
   position: fixed;
+  display: flex;
+  justify-content: center;
   right: 350px;
   top: -700px;
   height: 700px;
